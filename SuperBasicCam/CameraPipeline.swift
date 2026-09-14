@@ -78,8 +78,8 @@ final class CameraPipeline: NSObject, ObservableObject {
     private let session = AVCaptureSession()
     private let output = AVCaptureVideoDataOutput()
     private var input: AVCaptureDeviceInput?
-    private let sessionQueue = DispatchQueue(label: BasicCam.appBundleID + ".session")
-    private let captureQueue = DispatchQueue(label: BasicCam.appBundleID + ".capture", qos: .userInteractive)
+    private let sessionQueue = DispatchQueue(label: SuperBasicCam.appBundleID + ".session")
+    private let captureQueue = DispatchQueue(label: SuperBasicCam.appBundleID + ".capture", qos: .userInteractive)
     private let rotator = FrameRotator()
     private let sink = SinkWriter()
     private var sinkRetryTimer: DispatchSourceTimer?
@@ -110,7 +110,7 @@ final class CameraPipeline: NSObject, ObservableObject {
         disconnectObserver = NotificationCenter.default.addObserver(
             forName: AVCaptureDevice.wasDisconnectedNotification, object: nil, queue: .main
         ) { [weak self] note in
-            guard let device = note.object as? AVCaptureDevice, device.uniqueID == BasicCam.deviceUID else { return }
+            guard let device = note.object as? AVCaptureDevice, device.uniqueID == SuperBasicCam.deviceUID else { return }
             self?.captureQueue.async { self?.dropSink() }
         }
     }
@@ -134,7 +134,7 @@ final class CameraPipeline: NSObject, ObservableObject {
     }
 
     private func refreshCameras() {
-        let list = discovery.devices.filter { $0.uniqueID != BasicCam.deviceUID }
+        let list = discovery.devices.filter { $0.uniqueID != SuperBasicCam.deviceUID }
         cameras = list
         if !list.contains(where: { $0.uniqueID == selectedCameraID }), let first = list.first {
             selectedCameraID = first.uniqueID
@@ -176,7 +176,7 @@ final class CameraPipeline: NSObject, ObservableObject {
         input = newInput
 
         if !session.outputs.contains(output) {
-            output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: BasicCam.pixelFormat]
+            output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: SuperBasicCam.pixelFormat]
             output.alwaysDiscardsLateVideoFrames = true
             output.setSampleBufferDelegate(self, queue: captureQueue)
             if session.canAddOutput(output) {

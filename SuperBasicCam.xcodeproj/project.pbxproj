@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A1B4B84A3ECE94B8DE193B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233EA148D852E36D138E1E07 /* Constants.swift */; };
+		1A5AF92115E0EAE044055056 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A8E056D862AD59B4E24C2F /* PreviewView.swift */; };
+		269B2F5E8E87CDAFCC76644B /* SinkWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53ED29CD6CD6D7580DBE5C /* SinkWriter.swift */; };
+		2D17C8C847C90A6CF9052FA7 /* CameraPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40431A1C88BFD06EC041AE3 /* CameraPipeline.swift */; };
+		356D60CBB8DAAEC2274481FB /* SinkStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897D962F748BC0AAC7B7D5F8 /* SinkStream.swift */; };
+		4BAFB1358968B6A1F0DAC476 /* DeviceSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FDBA2220F48CE97D85136A /* DeviceSource.swift */; };
+		4E0C8DFA15AFC9423898DBA2 /* ExtensionInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD98A77B63735215744FB1 /* ExtensionInstaller.swift */; };
+		505BB7D85FF2790C5CFF44D3 /* SuperBasicCamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BA559A251A6BF63D6348D /* SuperBasicCamApp.swift */; };
+		5897040DE280BEBDF63FB96B /* FrameRotator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28C0ECE5817EEDDFED3BC /* FrameRotator.swift */; };
+		B4487AE2CFAB3231F9C7373B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F3A8727757BC2D2E6DAD86 /* main.swift */; };
+		CA5CF2E245E604293D53F8CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233EA148D852E36D138E1E07 /* Constants.swift */; };
+		DFFEA03D53FB1B6D0BC94CA2 /* ProviderSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631F29DEDC1D78AD762DA985 /* ProviderSource.swift */; };
+		E51B8C74BB12C4111FA9AC70 /* SourceStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7476212160860A51B0E7B /* SourceStream.swift */; };
+		EC0769514F60A78C51856323 /* SuperBasicCamExtension.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = D77419F669E5444D0B406931 /* SuperBasicCamExtension.systemextension */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ECB0B8B77FCB520AF361CB78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E564899EE7367B16D60DA2B /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F6C65C51504E0CE366AF378 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 941EF32023979E1DE1153628 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A66EEF71A15051499ACFC7B;
+			remoteInfo = SuperBasicCamExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D5ACB8F3C2C30BBCC0BFDB71 /* Embed System Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				EC0769514F60A78C51856323 /* SuperBasicCamExtension.systemextension in Embed System Extensions */,
+			);
+			name = "Embed System Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04A45EC7D071C1AEA9C3F92D /* SuperBasicCam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuperBasicCam.entitlements; sourceTree = "<group>"; };
+		06E28C0ECE5817EEDDFED3BC /* FrameRotator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameRotator.swift; sourceTree = "<group>"; };
+		0C8967B98C80761F8AAE5311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0E564899EE7367B16D60DA2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		20A55D63E806CCABF6B3D109 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		20AD98A77B63735215744FB1 /* ExtensionInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionInstaller.swift; sourceTree = "<group>"; };
+		233EA148D852E36D138E1E07 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3A53ED29CD6CD6D7580DBE5C /* SinkWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinkWriter.swift; sourceTree = "<group>"; };
+		407BA559A251A6BF63D6348D /* SuperBasicCamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperBasicCamApp.swift; sourceTree = "<group>"; };
+		45FDBA2220F48CE97D85136A /* DeviceSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSource.swift; sourceTree = "<group>"; };
+		54A8E056D862AD59B4E24C2F /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		631F29DEDC1D78AD762DA985 /* ProviderSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderSource.swift; sourceTree = "<group>"; };
+		68F3A8727757BC2D2E6DAD86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		6DC7476212160860A51B0E7B /* SourceStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceStream.swift; sourceTree = "<group>"; };
+		773DDCFAEF8A31B0FA9FDB96 /* SuperBasicCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperBasicCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		897D962F748BC0AAC7B7D5F8 /* SinkStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinkStream.swift; sourceTree = "<group>"; };
+		8D033F2214DBFAFFD668D2C9 /* SuperBasicCamExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuperBasicCamExtension.entitlements; sourceTree = "<group>"; };
+		A40431A1C88BFD06EC041AE3 /* CameraPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPipeline.swift; sourceTree = "<group>"; };
+		D77419F669E5444D0B406931 /* SuperBasicCamExtension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = SuperBasicCamExtension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1AB54EF83EE2209EA057A3A4 /* SuperBasicCam */ = {
+			isa = PBXGroup;
+			children = (
+				A40431A1C88BFD06EC041AE3 /* CameraPipeline.swift */,
+				0E564899EE7367B16D60DA2B /* ContentView.swift */,
+				20AD98A77B63735215744FB1 /* ExtensionInstaller.swift */,
+				06E28C0ECE5817EEDDFED3BC /* FrameRotator.swift */,
+				20A55D63E806CCABF6B3D109 /* Info.plist */,
+				54A8E056D862AD59B4E24C2F /* PreviewView.swift */,
+				3A53ED29CD6CD6D7580DBE5C /* SinkWriter.swift */,
+				04A45EC7D071C1AEA9C3F92D /* SuperBasicCam.entitlements */,
+				407BA559A251A6BF63D6348D /* SuperBasicCamApp.swift */,
+			);
+			path = SuperBasicCam;
+			sourceTree = "<group>";
+		};
+		2A2FE315C08EC152A5716803 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				773DDCFAEF8A31B0FA9FDB96 /* SuperBasicCam.app */,
+				D77419F669E5444D0B406931 /* SuperBasicCamExtension.systemextension */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51B80D6179A028323A18C179 /* SuperBasicCamExtension */ = {
+			isa = PBXGroup;
+			children = (
+				45FDBA2220F48CE97D85136A /* DeviceSource.swift */,
+				0C8967B98C80761F8AAE5311 /* Info.plist */,
+				68F3A8727757BC2D2E6DAD86 /* main.swift */,
+				631F29DEDC1D78AD762DA985 /* ProviderSource.swift */,
+				897D962F748BC0AAC7B7D5F8 /* SinkStream.swift */,
+				6DC7476212160860A51B0E7B /* SourceStream.swift */,
+				8D033F2214DBFAFFD668D2C9 /* SuperBasicCamExtension.entitlements */,
+			);
+			path = SuperBasicCamExtension;
+			sourceTree = "<group>";
+		};
+		66ADC9B81F3743F3C0C1C8DF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				233EA148D852E36D138E1E07 /* Constants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6991A177F067C2835A74C958 = {
+			isa = PBXGroup;
+			children = (
+				66ADC9B81F3743F3C0C1C8DF /* Shared */,
+				1AB54EF83EE2209EA057A3A4 /* SuperBasicCam */,
+				51B80D6179A028323A18C179 /* SuperBasicCamExtension */,
+				2A2FE315C08EC152A5716803 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A66EEF71A15051499ACFC7B /* SuperBasicCamExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05FDA441C0C800CFDB390411 /* Build configuration list for PBXNativeTarget "SuperBasicCamExtension" */;
+			buildPhases = (
+				68857923D096D17D7CE39687 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperBasicCamExtension;
+			packageProductDependencies = (
+			);
+			productName = SuperBasicCamExtension;
+			productReference = D77419F669E5444D0B406931 /* SuperBasicCamExtension.systemextension */;
+			productType = "com.apple.product-type.system-extension";
+		};
+		DA4CF46463932E47AA61D0C5 /* SuperBasicCam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D055AA590E0310E687ED48 /* Build configuration list for PBXNativeTarget "SuperBasicCam" */;
+			buildPhases = (
+				22F77B4A7D4D7D61797924DD /* Sources */,
+				D5ACB8F3C2C30BBCC0BFDB71 /* Embed System Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1387491938420D75D681ADFD /* PBXTargetDependency */,
+			);
+			name = SuperBasicCam;
+			packageProductDependencies = (
+			);
+			productName = SuperBasicCam;
+			productReference = 773DDCFAEF8A31B0FA9FDB96 /* SuperBasicCam.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		941EF32023979E1DE1153628 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					9A66EEF71A15051499ACFC7B = {
+						DevelopmentTeam = SG2DLSY6DA;
+						ProvisioningStyle = Automatic;
+					};
+					DA4CF46463932E47AA61D0C5 = {
+						DevelopmentTeam = SG2DLSY6DA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FABD30E10558A24AA2F77541 /* Build configuration list for PBXProject "SuperBasicCam" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6991A177F067C2835A74C958;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2A2FE315C08EC152A5716803 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA4CF46463932E47AA61D0C5 /* SuperBasicCam */,
+				9A66EEF71A15051499ACFC7B /* SuperBasicCamExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22F77B4A7D4D7D61797924DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D17C8C847C90A6CF9052FA7 /* CameraPipeline.swift in Sources */,
+				CA5CF2E245E604293D53F8CF /* Constants.swift in Sources */,
+				ECB0B8B77FCB520AF361CB78 /* ContentView.swift in Sources */,
+				4E0C8DFA15AFC9423898DBA2 /* ExtensionInstaller.swift in Sources */,
+				5897040DE280BEBDF63FB96B /* FrameRotator.swift in Sources */,
+				1A5AF92115E0EAE044055056 /* PreviewView.swift in Sources */,
+				269B2F5E8E87CDAFCC76644B /* SinkWriter.swift in Sources */,
+				505BB7D85FF2790C5CFF44D3 /* SuperBasicCamApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68857923D096D17D7CE39687 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A1B4B84A3ECE94B8DE193B0 /* Constants.swift in Sources */,
+				4BAFB1358968B6A1F0DAC476 /* DeviceSource.swift in Sources */,
+				DFFEA03D53FB1B6D0BC94CA2 /* ProviderSource.swift in Sources */,
+				356D60CBB8DAAEC2274481FB /* SinkStream.swift in Sources */,
+				E51B8C74BB12C4111FA9AC70 /* SourceStream.swift in Sources */,
+				B4487AE2CFAB3231F9C7373B /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1387491938420D75D681ADFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A66EEF71A15051499ACFC7B /* SuperBasicCamExtension */;
+			targetProxy = 5F6C65C51504E0CE366AF378 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1FDFD0DD61CC369EC1A511E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = SG2DLSY6DA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3B381A6B00E9CC24FB1ED437 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SuperBasicCamExtension/SuperBasicCamExtension.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SuperBasicCamExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddwang.SuperBasicCam.Extension;
+				PRODUCT_NAME = com.ddwang.SuperBasicCam.Extension;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		66F2F4D982B6C54C3B854787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SuperBasicCam/SuperBasicCam.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SuperBasicCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddwang.SuperBasicCam;
+				PRODUCT_NAME = SuperBasicCam;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		773B3BBA28B35192EAF99023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SG2DLSY6DA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8718A5CF0F3694B12C480FF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SuperBasicCam/SuperBasicCam.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SuperBasicCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddwang.SuperBasicCam;
+				PRODUCT_NAME = SuperBasicCam;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DC6E52610E96B7CB2C0A66DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SuperBasicCamExtension/SuperBasicCamExtension.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SuperBasicCamExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddwang.SuperBasicCam.Extension;
+				PRODUCT_NAME = com.ddwang.SuperBasicCam.Extension;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05FDA441C0C800CFDB390411 /* Build configuration list for PBXNativeTarget "SuperBasicCamExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B381A6B00E9CC24FB1ED437 /* Debug */,
+				DC6E52610E96B7CB2C0A66DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E3D055AA590E0310E687ED48 /* Build configuration list for PBXNativeTarget "SuperBasicCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8718A5CF0F3694B12C480FF9 /* Debug */,
+				66F2F4D982B6C54C3B854787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FABD30E10558A24AA2F77541 /* Build configuration list for PBXProject "SuperBasicCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				773B3BBA28B35192EAF99023 /* Debug */,
+				1FDFD0DD61CC369EC1A511E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 941EF32023979E1DE1153628 /* Project object */;
+}

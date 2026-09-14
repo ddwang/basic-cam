@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Builds BasicCam in Release, copies it to /Applications, and opens it.
+# Builds SuperBasicCam in Release, copies it to /Applications, and opens it.
 # System extensions load only from /Applications while SIP is enabled.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -13,23 +13,23 @@ fi
 
 xcodegen generate --quiet
 xcodebuild \
-  -project BasicCam.xcodeproj \
-  -scheme BasicCam \
+  -project SuperBasicCam.xcodeproj \
+  -scheme SuperBasicCam \
   -configuration Release \
   -derivedDataPath build \
   -allowProvisioningUpdates \
   -quiet \
   build
 
-app="build/Build/Products/Release/BasicCam.app"
+app="build/Build/Products/Release/SuperBasicCam.app"
 if [[ ! -d "$app" ]]; then
   echo "Build did not produce $app" >&2
   exit 1
 fi
 
-if [[ -d /Applications/BasicCam.app ]]; then
-  rm -rf /Applications/BasicCam.app
+if [[ -d /Applications/SuperBasicCam.app ]]; then
+  rm -rf /Applications/SuperBasicCam.app
 fi
-ditto "$app" /Applications/BasicCam.app
-echo "Installed /Applications/BasicCam.app"
-open /Applications/BasicCam.app
+ditto "$app" /Applications/SuperBasicCam.app
+echo "Installed /Applications/SuperBasicCam.app"
+open /Applications/SuperBasicCam.app

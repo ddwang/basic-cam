@@ -6,7 +6,7 @@ import os
 /// Pushes frames into the extension's sink stream through the Core Media IO C API.
 /// Call every method from one serial queue.
 final class SinkWriter {
-    private let logger = Logger(subsystem: BasicCam.appBundleID, category: "sink")
+    private let logger = Logger(subsystem: SuperBasicCam.appBundleID, category: "sink")
     private var deviceID: CMIODeviceID = 0
     private var streamID: CMIOStreamID = 0
     private var queue: CMSimpleQueue?
@@ -18,7 +18,7 @@ final class SinkWriter {
     @discardableResult
     func connect() -> Bool {
         guard !isConnected else { return true }
-        guard let device = Self.findDevice(uid: BasicCam.deviceUID),
+        guard let device = Self.findDevice(uid: SuperBasicCam.deviceUID),
               let stream = Self.findSinkStream(on: device) else {
             return false
         }

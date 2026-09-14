@@ -23,7 +23,7 @@ final class ExtensionInstaller: NSObject, ObservableObject, OSSystemExtensionReq
         case .requesting:
             return "Installing the camera extension…"
         case .needsApproval:
-            return "Approve BasicCam in System Settings > General > Login Items & Extensions > Camera Extensions."
+            return "Approve SuperBasicCam in System Settings > General > Login Items & Extensions > Camera Extensions."
         case .installed:
             return "Extension installed. Waiting for the virtual camera to appear…"
         case .rebootRequired:
@@ -34,11 +34,11 @@ final class ExtensionInstaller: NSObject, ObservableObject, OSSystemExtensionReq
     }
 
     func install() {
-        submit(OSSystemExtensionRequest.activationRequest(forExtensionWithIdentifier: BasicCam.extensionBundleID, queue: .main))
+        submit(OSSystemExtensionRequest.activationRequest(forExtensionWithIdentifier: SuperBasicCam.extensionBundleID, queue: .main))
     }
 
     func uninstall() {
-        submit(OSSystemExtensionRequest.deactivationRequest(forExtensionWithIdentifier: BasicCam.extensionBundleID, queue: .main))
+        submit(OSSystemExtensionRequest.deactivationRequest(forExtensionWithIdentifier: SuperBasicCam.extensionBundleID, queue: .main))
     }
 
     private func submit(_ request: OSSystemExtensionRequest) {

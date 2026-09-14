@@ -1,17 +1,17 @@
-# BasicCam
+# SuperBasicCam
 
-BasicCam rotates a webcam by 0, 90, 180, or 270 degrees, optionally crops it to
-a square, and publishes the result as a virtual camera named **BasicCam**. Any app that lists cameras (Zoom, Meet,
+SuperBasicCam rotates a webcam by 0, 90, 180, or 270 degrees, optionally crops it to
+a square, and publishes the result as a virtual camera named **SuperBasicCam**. Any app that lists cameras (Zoom, Meet,
 FaceTime, QuickTime) can select it.
 
 ## How it works
 
-BasicCam has two parts:
+SuperBasicCam has two parts:
 
-- **BasicCam.app** captures the physical camera with `AVCaptureSession`, crops
+- **SuperBasicCam.app** captures the physical camera with `AVCaptureSession`, crops
   and rotates each BGRA frame with `vImageRotate90_ARGB8888`, and writes the frame into the
   extension's sink stream through the Core Media IO C API.
-- **BasicCam Extension** is a Core Media IO camera extension. It exposes one
+- **SuperBasicCam Extension** is a Core Media IO camera extension. It exposes one
   device with a source stream (what other apps read) and a sink stream (what
   the app writes). The extension forwards each frame without copying it. When
   the app isn't running, the extension sends black frames so clients keep a
@@ -37,7 +37,7 @@ when the queue is full.
    the ID under **Settings > Accounts** when you select a team.
 2. Sign in to that account in Xcode so automatic signing can create the
    provisioning profiles.
-3. Make sure the App ID for `com.ddwang.BasicCam` has the **System Extension**
+3. Make sure the App ID for `com.ddwang.SuperBasicCam` has the **System Extension**
    capability. Xcode adds it on the first build when the account has permission
    to edit App IDs. Otherwise, add it at developer.apple.com.
 
@@ -54,15 +54,15 @@ Protection is enabled. The install script handles that:
 ```
 
 The script regenerates the Xcode project, builds the Release configuration,
-copies `BasicCam.app` to `/Applications`, and opens it.
+copies `SuperBasicCam.app` to `/Applications`, and opens it.
 
-To build in Xcode instead, run `xcodegen generate`, open `BasicCam.xcodeproj`,
-build the **BasicCam** scheme, and copy the product to `/Applications` before
+To build in Xcode instead, run `xcodegen generate`, open `SuperBasicCam.xcodeproj`,
+build the **SuperBasicCam** scheme, and copy the product to `/Applications` before
 launching it.
 
 ## Use
 
-1. Launch BasicCam and allow camera access.
+1. Launch SuperBasicCam and allow camera access.
 2. Click **Install camera extension**. macOS asks you to approve the extension
    under **System Settings > General > Login Items & Extensions > Camera
    Extensions**.
@@ -70,13 +70,13 @@ launching it.
    default and trims the long edge around the center, so 1280x720 becomes
    720x720. The status dot turns green when frames are flowing to the virtual
    camera.
-4. In your video app, select the **BasicCam** camera.
+4. In your video app, select the **SuperBasicCam** camera.
 
 Rotation is clockwise. With the square crop off, a 90 or 270 degree rotation
 produces a portrait frame, for example 720x1280 instead of 1280x720. Set the
 rotation and crop before joining a call. Some apps don't pick up a frame-size change until you reselect the camera.
 
-Settings persist across launches. BasicCam must stay running for the virtual
+Settings persist across launches. SuperBasicCam must stay running for the virtual
 camera to show live video.
 
 To remove the extension, choose **Extension > Uninstall camera extension** from
@@ -89,5 +89,5 @@ the menu bar.
   signing steps above.
 - **The extension never appears.** Confirm the app runs from `/Applications`.
   Run `systemextensionsctl list` to see the extension's state.
-- **Black picture in the client app.** BasicCam.app isn't running, or its status
+- **Black picture in the client app.** SuperBasicCam.app isn't running, or its status
   dot is orange. Launch the app and check the status line.
