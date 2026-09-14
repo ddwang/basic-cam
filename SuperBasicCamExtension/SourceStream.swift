@@ -18,8 +18,8 @@ final class SourceStream: NSObject, CMIOExtensionStreamSource {
 
     private let formatIndex = OSAllocatedUnfairLock<Int>(initialState: 0)
 
-    private let logger = Logger(subsystem: BasicCam.extensionBundleID, category: "source")
-    private let timerQueue = DispatchQueue(label: BasicCam.extensionBundleID + ".placeholder")
+    private let logger = Logger(subsystem: SuperBasicCam.extensionBundleID, category: "source")
+    private let timerQueue = DispatchQueue(label: SuperBasicCam.extensionBundleID + ".placeholder")
     private var placeholderTimer: DispatchSourceTimer?
     private let lastLiveFrame = OSAllocatedUnfairLock<UInt64>(initialState: 0)
     private var placeholderBuffers: [Int: CVPixelBuffer] = [:]
@@ -31,7 +31,7 @@ final class SourceStream: NSObject, CMIOExtensionStreamSource {
         self.formats = formats
         super.init()
         stream = CMIOExtensionStream(
-            localizedName: "\(BasicCam.deviceName) Video",
+            localizedName: "\(SuperBasicCam.deviceName) Video",
             streamID: UUID(),
             direction: .source,
             clockType: .hostTime,
@@ -80,7 +80,7 @@ final class SourceStream: NSObject, CMIOExtensionStreamSource {
             result.activeFormatIndex = activeFormatIndex
         }
         if properties.contains(.streamFrameDuration) {
-            result.frameDuration = CMTime(value: 1, timescale: BasicCam.frameRate)
+            result.frameDuration = CMTime(value: 1, timescale: SuperBasicCam.frameRate)
         }
         return result
     }
@@ -108,7 +108,7 @@ final class SourceStream: NSObject, CMIOExtensionStreamSource {
     private func startPlaceholderTimer() {
         guard placeholderTimer == nil else { return }
         let timer = DispatchSource.makeTimerSource(queue: timerQueue)
-        timer.schedule(deadline: .now(), repeating: 1.0 / Double(BasicCam.frameRate), leeway: .milliseconds(2))
+        timer.schedule(deadline: .now(), repeating: 1.0 / Double(SuperBasicCam.frameRate), leeway: .milliseconds(2))
         timer.setEventHandler { [weak self] in self?.placeholderTick() }
         timer.resume()
         placeholderTimer = timer
@@ -132,7 +132,7 @@ final class SourceStream: NSObject, CMIOExtensionStreamSource {
         let format = formats[index]
         guard let pixelBuffer = placeholderPixelBuffer(for: index) else { return nil }
         var timing = CMSampleTimingInfo(
-            duration: CMTime(value: 1, timescale: BasicCam.frameRate),
+            duration: CMTime(value: 1, timescale: SuperBasicCam.frameRate),
             presentationTimeStamp: CMClockGetTime(CMClockGetHostTimeClock()),
             decodeTimeStamp: .invalid
         )
@@ -159,7 +159,7 @@ final class SourceStream: NSObject, CMIOExtensionStreamSource {
             kCFAllocatorDefault,
             Int(dims.width),
             Int(dims.height),
-            BasicCam.pixelFormat,
+            SuperBasicCam.pixelFormat,
             attributes as CFDictionary,
             &pixelBuffer
         )

@@ -133,7 +133,7 @@ final class FrameRotator {
     private func makeBuffer(width: Int, height: Int) -> CVPixelBuffer? {
         if pool == nil || poolSize != (width, height) {
             let attributes: [CFString: Any] = [
-                kCVPixelBufferPixelFormatTypeKey: BasicCam.pixelFormat,
+                kCVPixelBufferPixelFormatTypeKey: SuperBasicCam.pixelFormat,
                 kCVPixelBufferWidthKey: width,
                 kCVPixelBufferHeightKey: height,
                 kCVPixelBufferIOSurfacePropertiesKey: [:] as CFDictionary,

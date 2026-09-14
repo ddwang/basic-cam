@@ -1,12 +1,12 @@
 import SwiftUI
 
 @main
-struct BasicCamApp: App {
+struct SuperBasicCamApp: App {
     @StateObject private var pipeline = CameraPipeline()
     @StateObject private var installer = ExtensionInstaller()
 
     var body: some Scene {
-        WindowGroup("BasicCam") {
+        WindowGroup("SuperBasicCam") {
             ContentView()
                 .environmentObject(pipeline)
                 .environmentObject(installer)

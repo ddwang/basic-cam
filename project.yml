@@ -1,4 +1,4 @@
-name: BasicCam
+name: SuperBasicCam
 options:
   deploymentTarget:
     macOS: "14.0"
@@ -19,31 +19,31 @@ settings:
     Debug:
       SWIFT_OPTIMIZATION_LEVEL: "-Onone"
 targets:
-  BasicCam:
+  SuperBasicCam:
     type: application
     platform: macOS
     sources:
-      - BasicCam
+      - SuperBasicCam
       - Shared
     settings:
       base:
-        PRODUCT_NAME: BasicCam
-        PRODUCT_BUNDLE_IDENTIFIER: com.ddwang.BasicCam
-        INFOPLIST_FILE: BasicCam/Info.plist
-        CODE_SIGN_ENTITLEMENTS: BasicCam/BasicCam.entitlements
+        PRODUCT_NAME: SuperBasicCam
+        PRODUCT_BUNDLE_IDENTIFIER: com.ddwang.SuperBasicCam
+        INFOPLIST_FILE: SuperBasicCam/Info.plist
+        CODE_SIGN_ENTITLEMENTS: SuperBasicCam/SuperBasicCam.entitlements
     dependencies:
-      - target: BasicCamExtension
+      - target: SuperBasicCamExtension
         embed: true
         codeSign: true
-  BasicCamExtension:
+  SuperBasicCamExtension:
     type: system-extension
     platform: macOS
     sources:
-      - BasicCamExtension
+      - SuperBasicCamExtension
       - Shared
     settings:
       base:
-        PRODUCT_NAME: com.ddwang.BasicCam.Extension
-        PRODUCT_BUNDLE_IDENTIFIER: com.ddwang.BasicCam.Extension
-        INFOPLIST_FILE: BasicCamExtension/Info.plist
-        CODE_SIGN_ENTITLEMENTS: BasicCamExtension/BasicCamExtension.entitlements
+        PRODUCT_NAME: com.ddwang.SuperBasicCam.Extension
+        PRODUCT_BUNDLE_IDENTIFIER: com.ddwang.SuperBasicCam.Extension
+        INFOPLIST_FILE: SuperBasicCamExtension/Info.plist
+        CODE_SIGN_ENTITLEMENTS: SuperBasicCamExtension/SuperBasicCamExtension.entitlements

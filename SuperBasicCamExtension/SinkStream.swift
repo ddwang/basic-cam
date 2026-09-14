@@ -8,7 +8,7 @@ final class SinkStream: NSObject, CMIOExtensionStreamSource {
     let formats: [CMIOExtensionStreamFormat]
     var activeFormatIndex = 0
 
-    private let logger = Logger(subsystem: BasicCam.extensionBundleID, category: "sink")
+    private let logger = Logger(subsystem: SuperBasicCam.extensionBundleID, category: "sink")
     private let onFrame: (CMSampleBuffer) -> Void
     private var client: CMIOExtensionClient?
     private var streaming = false
@@ -18,7 +18,7 @@ final class SinkStream: NSObject, CMIOExtensionStreamSource {
         self.onFrame = onFrame
         super.init()
         stream = CMIOExtensionStream(
-            localizedName: "\(BasicCam.deviceName) Sink",
+            localizedName: "\(SuperBasicCam.deviceName) Sink",
             streamID: UUID(),
             direction: .sink,
             clockType: .hostTime,
@@ -40,7 +40,7 @@ final class SinkStream: NSObject, CMIOExtensionStreamSource {
             result.activeFormatIndex = activeFormatIndex
         }
         if properties.contains(.streamFrameDuration) {
-            result.frameDuration = CMTime(value: 1, timescale: BasicCam.frameRate)
+            result.frameDuration = CMTime(value: 1, timescale: SuperBasicCam.frameRate)
         }
         // A short queue keeps latency low: the host drops a frame instead of buffering it.
         if properties.contains(.streamSinkBufferQueueSize) {
@@ -65,8 +65,8 @@ final class SinkStream: NSObject, CMIOExtensionStreamSource {
     }
 
     func authorizedToStartStream(for client: CMIOExtensionClient) -> Bool {
-        // Only the BasicCam host app may feed the virtual camera.
-        guard client.signingID == BasicCam.appBundleID else {
+        // Only the SuperBasicCam host app may feed the virtual camera.
+        guard client.signingID == SuperBasicCam.appBundleID else {
             logger.error("rejected sink client \(client.signingID ?? "<unsigned>", privacy: .public)")
             return false
         }

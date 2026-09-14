@@ -2,14 +2,14 @@ import CoreVideo
 import Foundation
 
 /// Values shared by the host app and the camera extension.
-enum BasicCam {
-    static let appBundleID = "com.ddwang.BasicCam"
-    static let extensionBundleID = "com.ddwang.BasicCam.Extension"
+enum SuperBasicCam {
+    static let appBundleID = "com.ddwang.SuperBasicCam"
+    static let extensionBundleID = "com.ddwang.SuperBasicCam.Extension"
 
     /// Stable UID of the virtual camera. The host app locates the
     /// extension's device by this value; clients see it as the device's uniqueID.
-    static let deviceUID = "com.ddwang.BasicCam.Device"
-    static let deviceName = "BasicCam"
+    static let deviceUID = "com.ddwang.SuperBasicCam.Device"
+    static let deviceName = "SuperBasicCam"
 
     static let pixelFormat = kCVPixelFormatType_32BGRA
     static let frameRate: Int32 = 30

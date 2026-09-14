@@ -59,10 +59,10 @@ struct ContentView: View {
 
     private var statusText: String {
         if !pipeline.cameraAuthorized {
-            return "Camera access denied. Allow BasicCam in System Settings > Privacy & Security > Camera."
+            return "Camera access denied. Allow SuperBasicCam in System Settings > Privacy & Security > Camera."
         }
         if pipeline.sinkConnected {
-            return "Streaming to the \"\(BasicCam.deviceName)\" virtual camera."
+            return "Streaming to the \"\(SuperBasicCam.deviceName)\" virtual camera."
         }
         return installer.statusText
     }

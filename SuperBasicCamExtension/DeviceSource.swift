@@ -12,13 +12,13 @@ final class DeviceSource: NSObject, CMIOExtensionDeviceSource {
     override init() {
         super.init()
         device = CMIOExtensionDevice(
-            localizedName: BasicCam.deviceName,
+            localizedName: SuperBasicCam.deviceName,
             deviceID: UUID(),
-            legacyDeviceID: BasicCam.deviceUID,
+            legacyDeviceID: SuperBasicCam.deviceUID,
             source: self
         )
 
-        let formats = BasicCam.frameSizes.map { StreamFormats.make(width: $0.width, height: $0.height) }
+        let formats = SuperBasicCam.frameSizes.map { StreamFormats.make(width: $0.width, height: $0.height) }
         sourceStream = SourceStream(formats: formats)
         sinkStream = SinkStream(formats: formats) { [weak self] sampleBuffer in
             self?.sourceStream.forward(sampleBuffer)
@@ -28,7 +28,7 @@ final class DeviceSource: NSObject, CMIOExtensionDeviceSource {
             try device.addStream(sourceStream.stream)
             try device.addStream(sinkStream.stream)
         } catch {
-            fatalError("BasicCam: failed to add streams: \(error)")
+            fatalError("SuperBasicCam: failed to add streams: \(error)")
         }
     }
 
@@ -42,7 +42,7 @@ final class DeviceSource: NSObject, CMIOExtensionDeviceSource {
             result.transportType = kIOAudioDeviceTransportTypeVirtual
         }
         if properties.contains(.deviceModel) {
-            result.model = BasicCam.deviceName
+            result.model = SuperBasicCam.deviceName
         }
         return result
     }
@@ -55,14 +55,14 @@ enum StreamFormats {
         var description: CMFormatDescription?
         let status = CMVideoFormatDescriptionCreate(
             allocator: kCFAllocatorDefault,
-            codecType: BasicCam.pixelFormat,
+            codecType: SuperBasicCam.pixelFormat,
             width: width,
             height: height,
             extensions: nil,
             formatDescriptionOut: &description
         )
         guard status == noErr, let description else {
-            fatalError("BasicCam: cannot create format description (\(status))")
+            fatalError("SuperBasicCam: cannot create format description (\(status))")
         }
         return CMIOExtensionStreamFormat(
             formatDescription: description,

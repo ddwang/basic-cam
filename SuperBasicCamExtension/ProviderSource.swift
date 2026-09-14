@@ -12,7 +12,7 @@ final class ProviderSource: NSObject, CMIOExtensionProviderSource {
         do {
             try provider.addDevice(deviceSource.device)
         } catch {
-            fatalError("BasicCam: failed to add device: \(error)")
+            fatalError("SuperBasicCam: failed to add device: \(error)")
         }
     }
 
@@ -27,7 +27,7 @@ final class ProviderSource: NSObject, CMIOExtensionProviderSource {
     func providerProperties(forProperties properties: Set<CMIOExtensionProperty>) throws -> CMIOExtensionProviderProperties {
         let result = CMIOExtensionProviderProperties(dictionary: [:])
         if properties.contains(.providerManufacturer) {
-            result.manufacturer = BasicCam.deviceName
+            result.manufacturer = SuperBasicCam.deviceName
         }
         return result
     }
