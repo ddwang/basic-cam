@@ -1,0 +1,49 @@
+name: BasicCam
+options:
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: false
+settings:
+  base:
+    # Change this to your Apple Developer team. Xcode > Settings > Accounts shows the ID.
+    DEVELOPMENT_TEAM: SG2DLSY6DA
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_HARDENED_RUNTIME: YES
+    SWIFT_OPTIMIZATION_LEVEL: "-O"
+  configs:
+    Debug:
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+targets:
+  BasicCam:
+    type: application
+    platform: macOS
+    sources:
+      - BasicCam
+      - Shared
+    settings:
+      base:
+        PRODUCT_NAME: BasicCam
+        PRODUCT_BUNDLE_IDENTIFIER: com.ddwang.BasicCam
+        INFOPLIST_FILE: BasicCam/Info.plist
+        CODE_SIGN_ENTITLEMENTS: BasicCam/BasicCam.entitlements
+    dependencies:
+      - target: BasicCamExtension
+        embed: true
+        codeSign: true
+  BasicCamExtension:
+    type: system-extension
+    platform: macOS
+    sources:
+      - BasicCamExtension
+      - Shared
+    settings:
+      base:
+        PRODUCT_NAME: com.ddwang.BasicCam.Extension
+        PRODUCT_BUNDLE_IDENTIFIER: com.ddwang.BasicCam.Extension
+        INFOPLIST_FILE: BasicCamExtension/Info.plist
+        CODE_SIGN_ENTITLEMENTS: BasicCamExtension/BasicCamExtension.entitlements
